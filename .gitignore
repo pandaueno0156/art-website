@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Original high-res images (too large for git)
+images/originals/
+
+# Python
+__pycache__/
+*.pyc

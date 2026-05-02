@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Artist Name</title>
+  <meta name="description" content="Get in touch with Artist Name for commissions, purchases, or exhibition inquiries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Artist Name</a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h1 class="section__title">Get in Touch</h1>
+          <p class="section__subtitle">Interested in a piece, a commission, or an exhibition? I'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact__info">
+            <h2>Contact Information</h2>
+            <p>Feel free to reach out for inquiries about available works, commissions, or exhibition opportunities.</p>
+
+            <div class="contact__detail">
+              <span>&#9993;</span>
+              <a href="mailto:artist@example.com">artist@example.com</a>
+            </div>
+
+            <div class="contact__detail">
+              <span>&#9742;</span>
+              <a href="tel:+1234567890">+1 (234) 567-890</a>
+            </div>
+
+            <div class="contact__detail">
+              <span>&#9883;</span>
+              <span>[City, Country]</span>
+            </div>
+
+            <h3 style="margin-top: var(--space-2xl); margin-bottom: var(--space-md);">Follow</h3>
+            <div class="contact__detail">
+              <a href="#" target="_blank" rel="noopener">Instagram</a>
+              <span>&middot;</span>
+              <a href="#" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+
+          <div class="contact__form">
+            <h3>Send a Message</h3>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <div class="form__group">
+                <label for="name" class="form__label">Name</label>
+                <input type="text" id="name" name="name" class="form__input" required>
+              </div>
+              <div class="form__group">
+                <label for="email" class="form__label">Email</label>
+                <input type="email" id="email" name="email" class="form__input" required>
+              </div>
+              <div class="form__group">
+                <label for="subject" class="form__label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form__input">
+              </div>
+              <div class="form__group">
+                <label for="message" class="form__label">Message</label>
+                <textarea id="message" name="message" class="form__textarea" required></textarea>
+              </div>
+              <button type="submit" class="form__submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Artist Name</span>
+        <div class="footer__links">
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+        <p class="footer__copy">&copy; 2026 Artist Name. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

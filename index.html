@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Name — Portfolio</title>
+  <meta name="description" content="Original artwork by Artist Name. Explore paintings, drawings, and mixed media works.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Artist Name</a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__bg" style="background-image: url('images/site/hero.svg');"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">Artist Name</h1>
+        <p class="hero__subtitle">Exploring light, color, and the beauty of everyday moments</p>
+        <a href="gallery.html" class="hero__cta">View Gallery</a>
+      </div>
+    </section>
+
+    <!-- Featured Works -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Featured Works</h2>
+          <p class="section__subtitle">A selection of recent and signature pieces</p>
+        </div>
+        <div class="featured-grid">
+          <div class="gallery-item" data-title="Artwork Title 1" data-meta="Oil on canvas, 2024" data-full="images/artworks/artwork-1.svg">
+            <img src="images/thumbs/artwork-1.svg" alt="Artwork Title 1" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Artwork Title 1</p>
+                <p class="gallery-item__meta">Oil on canvas, 2024</p>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-title="Artwork Title 2" data-meta="Watercolor, 2024" data-full="images/artworks/artwork-2.svg">
+            <img src="images/thumbs/artwork-2.svg" alt="Artwork Title 2" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Artwork Title 2</p>
+                <p class="gallery-item__meta">Watercolor, 2024</p>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-title="Artwork Title 3" data-meta="Acrylic, 2023" data-full="images/artworks/artwork-3.svg">
+            <img src="images/thumbs/artwork-3.svg" alt="Artwork Title 3" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Artwork Title 3</p>
+                <p class="gallery-item__meta">Acrylic, 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brief Intro -->
+    <section class="section" style="background-color: var(--color-bg-alt);">
+      <div class="container" style="text-align: center;">
+        <h2 class="section__title">About the Artist</h2>
+        <p style="max-width: 60ch; margin: var(--space-lg) auto 0; font-size: var(--text-lg); line-height: 1.8;">
+          Artist Name is a painter and mixed-media artist whose work explores the interplay
+          of light, texture, and emotion. With a practice spanning over two decades, each piece
+          invites the viewer to pause and discover beauty in the ordinary.
+        </p>
+        <a href="about.html" class="hero__cta" style="margin-top: var(--space-2xl);">Learn More</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Artist Name</span>
+        <div class="footer__links">
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+        <p class="footer__copy">&copy; 2026 Artist Name. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <div class="lightbox__content">
+      <button class="lightbox__close" aria-label="Close">&times;</button>
+      <img src="" alt="" class="lightbox__img">
+      <div class="lightbox__info">
+        <p class="lightbox__title"></p>
+        <p class="lightbox__meta"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

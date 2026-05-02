@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Artist Name</title>
+  <meta name="description" content="Browse the complete collection of artwork by Artist Name. Paintings, drawings, and mixed media.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Artist Name</a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="gallery.html" class="nav__link nav__link--active">Gallery</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h1 class="section__title">Gallery</h1>
+          <p class="section__subtitle">A complete collection of works</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-category="all">All</button>
+          <button class="filter-tab" data-category="painting">Paintings</button>
+          <button class="filter-tab" data-category="drawing">Drawings</button>
+          <button class="filter-tab" data-category="mixed-media">Mixed Media</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+          <div class="gallery-item" data-category="painting" data-title="Morning Light" data-meta="Oil on canvas, 60×80cm, 2024" data-full="images/artworks/artwork-1.svg">
+            <img src="images/thumbs/artwork-1.svg" alt="Morning Light" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Morning Light</p>
+                <p class="gallery-item__meta">Oil on canvas, 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="painting" data-title="Autumn Reflections" data-meta="Watercolor on paper, 40×50cm, 2024" data-full="images/artworks/artwork-2.svg">
+            <img src="images/thumbs/artwork-2.svg" alt="Autumn Reflections" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Autumn Reflections</p>
+                <p class="gallery-item__meta">Watercolor, 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="drawing" data-title="Study in Charcoal" data-meta="Charcoal on paper, 30×40cm, 2023" data-full="images/artworks/artwork-3.svg">
+            <img src="images/thumbs/artwork-3.svg" alt="Study in Charcoal" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Study in Charcoal</p>
+                <p class="gallery-item__meta">Charcoal on paper, 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="mixed-media" data-title="Urban Fragments" data-meta="Mixed media on board, 50×70cm, 2023" data-full="images/artworks/artwork-4.svg">
+            <img src="images/thumbs/artwork-4.svg" alt="Urban Fragments" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Urban Fragments</p>
+                <p class="gallery-item__meta">Mixed media, 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="painting" data-title="Coastal Breeze" data-meta="Acrylic on canvas, 80×100cm, 2023" data-full="images/artworks/artwork-5.svg">
+            <img src="images/thumbs/artwork-5.svg" alt="Coastal Breeze" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Coastal Breeze</p>
+                <p class="gallery-item__meta">Acrylic on canvas, 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="drawing" data-title="Garden Sketch" data-meta="Ink on paper, 25×35cm, 2022" data-full="images/artworks/artwork-6.svg">
+            <img src="images/thumbs/artwork-6.svg" alt="Garden Sketch" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Garden Sketch</p>
+                <p class="gallery-item__meta">Ink on paper, 2022</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="painting" data-title="Still Life with Flowers" data-meta="Oil on canvas, 50×60cm, 2022" data-full="images/artworks/artwork-7.svg">
+            <img src="images/thumbs/artwork-7.svg" alt="Still Life with Flowers" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Still Life with Flowers</p>
+                <p class="gallery-item__meta">Oil on canvas, 2022</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="mixed-media" data-title="Memory Layers" data-meta="Collage and acrylic, 60×60cm, 2022" data-full="images/artworks/artwork-8.svg">
+            <img src="images/thumbs/artwork-8.svg" alt="Memory Layers" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Memory Layers</p>
+                <p class="gallery-item__meta">Collage and acrylic, 2022</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="painting" data-title="Winter Garden" data-meta="Watercolor on paper, 35×50cm, 2021" data-full="images/artworks/artwork-9.svg">
+            <img src="images/thumbs/artwork-9.svg" alt="Winter Garden" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Winter Garden</p>
+                <p class="gallery-item__meta">Watercolor, 2021</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Artist Name</span>
+        <div class="footer__links">
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+        <p class="footer__copy">&copy; 2026 Artist Name. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <div class="lightbox__content">
+      <button class="lightbox__close" aria-label="Close">&times;</button>
+      <img src="" alt="" class="lightbox__img">
+      <div class="lightbox__info">
+        <p class="lightbox__title"></p>
+        <p class="lightbox__meta"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
