@@ -26,6 +26,9 @@ svg {
   display: block;
   max-width: 100%;
   height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: auto;
 }
 
 input,
@@ -55,22 +58,41 @@ ol {
   list-style: none;
 }
 
-/* ===== Custom Properties ===== */
+/* ==========================================================================
+   COLOR & FONT REFERENCE
+   Change these variables to change colors/fonts across the ENTIRE site.
+   Each variable has a label showing what it affects.
+   ========================================================================== */
 :root {
-  /* Colors */
-  --color-bg: #fafafa;
-  --color-bg-alt: #f0efed;
-  --color-text: #2c2c2c;
-  --color-text-light: #5a5a5a;
-  --color-accent: #8b7355;
-  --color-accent-hover: #6d5a43;
-  --color-border: #e0ddd8;
-  --color-white: #ffffff;
-  --color-overlay: rgba(0, 0, 0, 0.85);
+  /* --- PAGE BACKGROUNDS --- */
+  --color-bg: #c02e9bd0;              /* MAIN BACKGROUND: home, gallery, series pages, about, contact */
+  --color-bg-alt: #a684eaaa;          /* "ABOUT THE ARTIST" SECTION BACKGROUND (home page) */
+  --color-footer-bg: #c379bfe5;       /* FOOTER BACKGROUND + gap above footer */
 
-  /* Typography */
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* --- TEXT COLORS --- */
+  --color-text: #424042;              /* HEADINGS & PRIMARY TEXT: all h1-h6, nav logo, footer name #140414 - black*/
+  --color-text-light: #424042;        /* PARAGRAPHS & SECONDARY TEXT: subtitles, descriptions, form labels old text - #5a5a5a */
+
+  /* --- ACCENT & UI COLORS --- */
+  --color-accent: #8b7355;            /* HOVER ACCENT: nav link underline, form focus, back-link hover */
+  --color-accent-hover: #6d5a43;      /* ACCENT DARKER: button hover states */
+  --color-border: #ee128b;            /* BORDERS: nav bottom border, footer top border, form input borders */
+  --color-white: #c379bfe5;           /* NAV BAR BACKGROUND */
+  --color-overlay: rgba(0, 0, 0, 0.85); /* LIGHTBOX DARK OVERLAY (when viewing full painting) */
+
+  /* ========== FONTS ==========
+     Change these two lines to change fonts across the ENTIRE site.
+     --font-heading: used for artist name, page titles, section titles, artwork titles
+     --font-body:    used for body text, nav links, descriptions, buttons
+     After changing, also update the Google Fonts <link> in EVERY .html file <head> section.
+     ========== */
+  --font-heading: 'Playfair Display', Georgia, serif;   /* HEADING FONT */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;  /* BODY FONT */
+
+  /*recommend         */
+  --font-heading: 'Lato', sans-serif;
+  --font-body: 'Lato', sans-serif;
+  /* <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"> */
 
   /* Font sizes */
   --text-xs: 0.75rem;
@@ -124,7 +146,7 @@ h3 { font-size: var(--text-2xl); }
 h4 { font-size: var(--text-xl); }
 
 p {
-  color: var(--color-text-light);
+  color: var(--color-text-light); /* change this color to change the text color in about the artists */
   max-width: 65ch;
 }
 
@@ -146,6 +168,22 @@ p {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: var(--space-md) var(--space-2xl);
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
 }
 
 /* ===== Navigation ===== */
@@ -172,11 +210,23 @@ p {
   padding-inline: var(--space-xl);
 }
 
+/* --- LOGO FONT & SIZE (top-left artist name) ---
+   Adjust these to change the logo independently of the rest of the site.
+   The logo always stays in the heading font regardless of language. */
 .nav__logo {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: 600;
+  font-family: var(--font-heading);       /* LOGO FONT: change to any font */
+  font-size: var(--text-xl);              /* LOGO SIZE: change to any size (e.g. 1.5rem) */
+  font-weight: 600;                       /* LOGO WEIGHT: 400=normal, 600=semibold, 700=bold */
   letter-spacing: 0.02em;
+  line-height: 1.2;                       /* LOGO LINE-HEIGHT: keeps height stable across languages */
+  white-space: nowrap;
+}
+
+/* "Artwork" sub-text next to the artist name */
+.nav__logo-sub {
+  font-weight: 400;                       /* SUB-TEXT WEIGHT */
+  font-size: var(--text-sm);              /* SUB-TEXT SIZE */
+  letter-spacing: 0.05em;
 }
 
 .nav__links {
@@ -213,6 +263,75 @@ p {
   width: 100%;
 }
 
+/* ===== Language Dropdown ===== */
+.nav__lang {
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: -8px;
+}
+
+.nav__lang-trigger {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+.nav__lang-trigger::after {
+  content: ' \25BE';
+  font-size: 0.7em;
+}
+
+.nav__lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 4px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  min-width: 120px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+  z-index: 100;
+}
+
+.nav__lang:hover .nav__lang-dropdown,
+.nav__lang:focus-within .nav__lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: block;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.lang-option:hover {
+  background-color: var(--color-bg);
+}
+
+.lang-option.active {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -246,46 +365,54 @@ p {
 
 /* ===== Footer ===== */
 .footer {
-  background-color: var(--color-white);
+  background-color: var(--color-footer-bg);  /* FOOTER BACKGROUND COLOR */
   border-top: 1px solid var(--color-border);
   padding: var(--space-3xl) 0;
-  margin-top: var(--space-5xl);
+  margin-top: 0;
 }
 
 .footer__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--space-lg);
+  min-height: 2rem;
 }
 
+/* --- FOOTER ARTIST NAME ---
+   Adjust these to control the artist name at the bottom of every page. */
 .footer__name {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-family: var(--font-heading);       /* FOOTER NAME FONT: change to any font */
+  font-size: var(--text-lg);              /* FOOTER NAME SIZE: change to any size (e.g. 1.25rem) */
+  font-weight: 700;                       /* FOOTER NAME WEIGHT: 400=normal, 700=bold */
+  line-height: 1.3;                       /* FOOTER NAME LINE-HEIGHT: keeps height stable */
 }
 
 .footer__links {
   display: flex;
   gap: var(--space-lg);
+  white-space: nowrap;
 }
 
 .footer__link {
-  font-size: var(--text-sm);
+  font-size: var(--text-sm);              /* FOOTER LINK SIZE */
   color: var(--color-text-light);
   transition: color var(--transition-fast);
+  line-height: 1.3;
 }
 
 .footer__link:hover {
   color: var(--color-accent);
 }
 
+/* --- FOOTER COPYRIGHT LINE ("All rights reserved") ---
+   Adjust these to control the copyright text at the bottom. */
 .footer__copy {
-  width: 100%;
-  text-align: center;
-  font-size: var(--text-xs);
-  color: var(--color-text-light);
-  margin-top: var(--space-xl);
+  font-family: var(--font-body);          /* FOOTER COPYRIGHT FONT: change to any font */
+  font-size: var(--text-xs);              /* FOOTER COPYRIGHT SIZE: change to any size */
+  color: var(--color-text-light);         /* FOOTER COPYRIGHT TEXT COLOR */
+  line-height: 1.3;                       /* FOOTER COPYRIGHT LINE-HEIGHT: keeps height stable */
 }
 
 /* ===== Page Content Offset ===== */
@@ -300,7 +427,7 @@ main {
   min-height: 500px;
   max-height: 900px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
   overflow: hidden;
@@ -311,23 +438,31 @@ main {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.15;
+}
+
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, transparent 60%);
 }
 
 .hero__content {
   position: relative;
   z-index: 1;
   padding: var(--space-xl);
+  padding-bottom: var(--space-4xl);
 }
 
 .hero__title {
   font-size: var(--text-5xl);
   margin-bottom: var(--space-md);
+  color: #9f2da4;                     /* HERO TITLE COLOR: change this independently */
 }
 
 .hero__subtitle {
   font-size: var(--text-lg);
-  color: var(--color-text-light);
+  color: rgba(136, 14, 116, 0.85);   /* HERO SUBTITLE COLOR: change this independently */
   font-style: italic;
   margin-bottom: var(--space-2xl);
 }
@@ -335,7 +470,8 @@ main {
 .hero__cta {
   display: inline-block;
   padding: var(--space-md) var(--space-2xl);
-  border: 1px solid var(--color-text);
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
   font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -343,8 +479,8 @@ main {
 }
 
 .hero__cta:hover {
-  background-color: var(--color-text);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-text);
 }
 
 /* ===== Section Styles ===== */
@@ -363,7 +499,7 @@ main {
 
 .section__subtitle {
   font-size: var(--text-lg);
-  color: var(--color-text-light);
+  color: var(--color-text-light); /* change this part to change the color of text in feature works */
   max-width: 50ch;
   margin-inline: auto;
 }
@@ -417,6 +553,30 @@ main {
   color: rgba(255, 255, 255, 0.8);
   font-size: var(--text-sm);
   margin-top: var(--space-xs);
+}
+
+/* ===== Video Page ===== */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3xl);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.video-item__player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.video-item__player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* ===== Lightbox ===== */
@@ -484,11 +644,84 @@ main {
   opacity: 0.7;
 }
 
-/* ===== Featured Works (Home) ===== */
-.featured-grid {
+/* ===== Collection Cards (Home) ===== */
+.collections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--space-xl);
+}
+
+.collection-card {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.collection-card__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.collection-card:hover .collection-card__img {
+  transform: scale(1.05);
+}
+
+.collection-card__info {
+  background: #c6a3e8;              /* <-- BOX COLOR: change this to any color you like */
+  /* background: #def5b3;              <-- BOX COLOR: change this to any color you like */
+
+  padding: var(--space-lg) var(--space-xl);
+  transition: background var(--transition-base);
+}
+
+.collection-card:hover .collection-card__info {
+  background: #956ba6e1;              /* <-- BOX HOVER COLOR: slightly darker on hover */
+}
+
+.collection-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color:#424042; /* change this color to change the text color of collection box in home pages */
+  margin-bottom: var(--space-xs);
+}
+
+.collection-card__count {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);     /* <-- COUNT TEXT COLOR: change this */
+}
+
+/* ===== Series Pages ===== */
+.back-link {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2xl);
+  transition: color var(--transition-fast);
+}
+
+.back-link::before {
+  content: '\2190\00a0';
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+.series__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  color: #59eae7e5;
+  margin-bottom: var(--space-lg);
+}
+
+.series__description {
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+  line-height: 1.8;
+  max-width: 70ch;
+  margin-bottom: var(--space-3xl);
 }
 
 /* ===== About Page ===== */
@@ -573,7 +806,7 @@ main {
   width: 100%;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
-  background-color: var(--color-white);
+  background-color: #c379bfe5;
   font-size: var(--text-base);
   transition: border-color var(--transition-fast);
 }
@@ -677,6 +910,23 @@ main {
     display: flex;
   }
 
+  .nav__lang-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    border: none;
+    display: flex;
+    gap: var(--space-sm);
+    background: none;
+    min-width: auto;
+    margin-top: var(--space-xs);
+  }
+
+  .nav__lang-trigger::after {
+    display: none;
+  }
+
   .about-layout {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
@@ -705,12 +955,14 @@ main {
     gap: var(--space-md);
   }
 
-  .featured-grid {
+  .collections-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-md);
   }
 
   .footer__inner {
     flex-direction: column;
+    flex-wrap: wrap;
     text-align: center;
   }
 
@@ -731,8 +983,7 @@ main {
     --text-3xl: 1.5rem;
   }
 
-  .gallery-grid,
-  .featured-grid {
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 

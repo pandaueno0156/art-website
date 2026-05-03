@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initLightbox();
   initFilterTabs();
+  disableImageRightClick();
+  initLanguageSwitcher();
 });
 
 /* ===== Mobile Navigation Toggle ===== */
@@ -63,6 +65,45 @@ function initLightbox() {
       closeLightbox();
     }
   });
+}
+
+/* ===== Disable Right-Click Everywhere ===== */
+function disableImageRightClick() {
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  });
+}
+
+/* ===== Language Switcher ===== */
+function initLanguageSwitcher() {
+  const saved = localStorage.getItem('lang') || 'en';
+  applyLanguage(saved);
+
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = btn.dataset.lang;
+      localStorage.setItem('lang', lang);
+      applyLanguage(lang);
+    });
+  });
+}
+
+function applyLanguage(lang) {
+  if (typeof TRANSLATIONS === 'undefined') return;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (TRANSLATIONS[key] && TRANSLATIONS[key][lang]) {
+      el.textContent = TRANSLATIONS[key][lang];
+    }
+  });
+
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  document.documentElement.lang = lang;
 }
 
 /* ===== Gallery Filter Tabs ===== */

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artist Name — Portfolio</title>
-  <meta name="description" content="Original artwork by Artist Name. Explore paintings, drawings, and mixed media works.">
+  <title>Ishigaki Miyuki — Portfolio</title>
+  <meta name="description" content="Original artwork by Ishigaki Miyuki. Explore paintings, drawings, and mixed media works.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -15,12 +15,20 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Artist Name</a>
+      <a href="index.html" class="nav__logo" lang="en">Ishigaki Miyuki <span class="nav__logo-sub">Artwork</span></a>
       <ul class="nav__links">
-        <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
-        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
-        <li><a href="about.html" class="nav__link">About</a></li>
-        <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><a href="index.html" class="nav__link nav__link--active" data-i18n="nav.home">Home</a></li>
+        <li><a href="video.html" class="nav__link" data-i18n="nav.video">Video</a></li>
+        <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+        <li class="nav__lang">
+          <button class="nav__lang-trigger" data-i18n="nav.language">Language</button>
+          <div class="nav__lang-dropdown">
+            <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="ja">日本語</button>
+            <button class="lang-option" data-lang="zhTW">繁體中文</button>
+          </div>
+        </li>
       </ul>
       <button class="nav__toggle" aria-label="Toggle navigation">
         <span></span>
@@ -33,11 +41,10 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero__bg" style="background-image: url('images/site/hero.svg');"></div>
+      <div class="hero__bg" style="background-image: url('images/site/hero.jpg');"></div>
       <div class="hero__content">
-        <h1 class="hero__title">Artist Name</h1>
-        <p class="hero__subtitle">Exploring light, color, and the beauty of everyday moments</p>
-        <a href="gallery.html" class="hero__cta">View Gallery</a>
+        <h1 class="hero__title" data-i18n="hero.title">Ishigaki Miyuki</h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">Exploring light, color, and the beauty of everyday moments</p>
       </div>
     </section>
 
@@ -45,51 +52,59 @@
     <section class="section">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title">Featured Works</h2>
-          <p class="section__subtitle">A selection of recent and signature pieces</p>
+          <h2 class="section__title" data-i18n="featured.title">Featured Works</h2>
+          <p class="section__subtitle" data-i18n="featured.subtitle">A selection of recent and signature pieces</p>
         </div>
-        <div class="featured-grid">
-          <div class="gallery-item" data-title="Artwork Title 1" data-meta="Oil on canvas, 2024" data-full="images/artworks/artwork-1.svg">
-            <img src="images/thumbs/artwork-1.svg" alt="Artwork Title 1" class="gallery-item__img" loading="lazy">
-            <div class="gallery-item__overlay">
-              <div>
-                <p class="gallery-item__title">Artwork Title 1</p>
-                <p class="gallery-item__meta">Oil on canvas, 2024</p>
-              </div>
+        <div class="collections-grid">
+          <a href="series/series-1.html" class="collection-card">
+            <img src="images/thumbs/art0.jpg" alt="Series 1" class="collection-card__img" loading="lazy">
+            <div class="collection-card__info">
+              <h3 class="collection-card__title" data-i18n="series1.title">Series Name 1</h3>
+              <p class="collection-card__count" data-i18n="series1.count">8 works</p>
             </div>
-          </div>
-          <div class="gallery-item" data-title="Artwork Title 2" data-meta="Watercolor, 2024" data-full="images/artworks/artwork-2.svg">
-            <img src="images/thumbs/artwork-2.svg" alt="Artwork Title 2" class="gallery-item__img" loading="lazy">
-            <div class="gallery-item__overlay">
-              <div>
-                <p class="gallery-item__title">Artwork Title 2</p>
-                <p class="gallery-item__meta">Watercolor, 2024</p>
-              </div>
+          </a>
+          <a href="series/series-2.html" class="collection-card">
+            <img src="images/thumbs/art1.jpg" alt="Series 2" class="collection-card__img" loading="lazy">
+            <div class="collection-card__info">
+              <h3 class="collection-card__title" data-i18n="series2.title">Series Name 2</h3>
+              <p class="collection-card__count" data-i18n="series2.count">6 works</p>
             </div>
-          </div>
-          <div class="gallery-item" data-title="Artwork Title 3" data-meta="Acrylic, 2023" data-full="images/artworks/artwork-3.svg">
-            <img src="images/thumbs/artwork-3.svg" alt="Artwork Title 3" class="gallery-item__img" loading="lazy">
-            <div class="gallery-item__overlay">
-              <div>
-                <p class="gallery-item__title">Artwork Title 3</p>
-                <p class="gallery-item__meta">Acrylic, 2023</p>
-              </div>
+          </a>
+          <a href="series/series-3.html" class="collection-card">
+            <img src="images/thumbs/art2.jpg" alt="Series 3" class="collection-card__img" loading="lazy">
+            <div class="collection-card__info">
+              <h3 class="collection-card__title" data-i18n="series3.title">Series Name 3</h3>
+              <p class="collection-card__count" data-i18n="series3.count">5 works</p>
             </div>
-          </div>
+          </a>
+          <a href="series/series-4.html" class="collection-card">
+            <img src="images/thumbs/art3.jpg" alt="Series 4" class="collection-card__img" loading="lazy">
+            <div class="collection-card__info">
+              <h3 class="collection-card__title" data-i18n="series4.title">Series Name 4</h3>
+              <p class="collection-card__count" data-i18n="series4.count">7 works</p>
+            </div>
+          </a>
+          <a href="series/series-5.html" class="collection-card">
+            <img src="images/thumbs/artwork-1.svg" alt="Series 5" class="collection-card__img" loading="lazy">
+            <div class="collection-card__info">
+              <h3 class="collection-card__title" data-i18n="series5.title">Series Name 5</h3>
+              <p class="collection-card__count" data-i18n="series5.count">4 works</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Brief Intro -->
-    <section class="section" style="background-color: var(--color-bg-alt);">
+    <section class="section" style="background-color: var(--color-bg-alt); margin-bottom: 0; padding-bottom: var(--space-5xl);">
       <div class="container" style="text-align: center;">
-        <h2 class="section__title">About the Artist</h2>
-        <p style="max-width: 60ch; margin: var(--space-lg) auto 0; font-size: var(--text-lg); line-height: 1.8;">
-          Artist Name is a painter and mixed-media artist whose work explores the interplay
+        <h2 class="section__title" data-i18n="home.about.title">About the Artist</h2>
+        <p data-i18n="home.about.text" style="max-width: 60ch; margin: var(--space-lg) auto 0; font-size: var(--text-lg); line-height: 1.8;">
+          Ishigaki Miyuki is a painter and mixed-media artist whose work explores the interplay
           of light, texture, and emotion. With a practice spanning over two decades, each piece
           invites the viewer to pause and discover beauty in the ordinary.
         </p>
-        <a href="about.html" class="hero__cta" style="margin-top: var(--space-2xl);">Learn More</a>
+        <a href="about.html" class="btn-outline" style="margin-top: var(--space-2xl);" data-i18n="home.about.cta">Learn More</a>
       </div>
     </section>
   </main>
@@ -98,13 +113,13 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__name">Artist Name</span>
+        <span class="footer__name" lang="en">Ishigaki Miyuki</span>
         <div class="footer__links">
-          <a href="gallery.html" class="footer__link">Gallery</a>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="video.html" class="footer__link" data-i18n="nav.video">Video</a>
+          <a href="about.html" class="footer__link" data-i18n="nav.about">About</a>
+          <a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact</a>
         </div>
-        <p class="footer__copy">&copy; 2026 Artist Name. All rights reserved.</p>
+        <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Ishigaki Miyuki. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -121,6 +136,7 @@
     </div>
   </div>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

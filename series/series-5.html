@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series Name 5 — Ishigaki Miyuki</title>
+  <meta name="description" content="Series Name 5 — a collection of works by Ishigaki Miyuki.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" lang="en">Ishigaki Miyuki <span class="nav__logo-sub">Artwork</span></a>
+      <ul class="nav__links">
+        <li><a href="../index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+        <li><a href="../video.html" class="nav__link" data-i18n="nav.video">Video</a></li>
+        <li><a href="../about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+        <li><a href="../contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+        <li class="nav__lang">
+          <button class="nav__lang-trigger" data-i18n="nav.language">Language</button>
+          <div class="nav__lang-dropdown">
+            <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="ja">日本語</button>
+            <button class="lang-option" data-lang="zhTW">繁體中文</button>
+          </div>
+        </li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <a href="../index.html" class="back-link" data-i18n="series.back">Back to Collections</a>
+        <h1 class="series__title" data-i18n="series5.page.title">Series Name 5</h1>
+        <p class="series__description" data-i18n="series5.page.description">
+          Description of this series goes here. Explain the inspiration, the techniques used,
+          and the story behind this body of work. This text helps collectors and viewers understand
+          the artistic vision and context of the pieces.
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-title="Painting 1" data-meta="Oil on canvas, 60x80cm, 2024" data-full="../images/artworks/artwork-1.svg">
+            <img src="../images/thumbs/artwork-1.svg" alt="Painting 1" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Painting 1</p>
+                <p class="gallery-item__meta">Oil on canvas, 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-title="Painting 2" data-meta="Oil on canvas, 50x70cm, 2024" data-full="../images/artworks/artwork-2.svg">
+            <img src="../images/thumbs/artwork-2.svg" alt="Painting 2" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Painting 2</p>
+                <p class="gallery-item__meta">Oil on canvas, 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-title="Painting 3" data-meta="Oil on canvas, 40x60cm, 2023" data-full="../images/artworks/artwork-3.svg">
+            <img src="../images/thumbs/artwork-3.svg" alt="Painting 3" class="gallery-item__img" loading="lazy">
+            <div class="gallery-item__overlay">
+              <div>
+                <p class="gallery-item__title">Painting 3</p>
+                <p class="gallery-item__meta">Oil on canvas, 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name" lang="en">Ishigaki Miyuki</span>
+        <div class="footer__links">
+          <a href="../video.html" class="footer__link" data-i18n="nav.video">Video</a>
+          <a href="../about.html" class="footer__link" data-i18n="nav.about">About</a>
+          <a href="../contact.html" class="footer__link" data-i18n="nav.contact">Contact</a>
+        </div>
+        <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Ishigaki Miyuki. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <div class="lightbox__content">
+      <button class="lightbox__close" aria-label="Close">&times;</button>
+      <img src="" alt="" class="lightbox__img">
+      <div class="lightbox__info">
+        <p class="lightbox__title"></p>
+        <p class="lightbox__meta"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/translations.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

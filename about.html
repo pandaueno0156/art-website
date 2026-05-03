@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Artist Name</title>
-  <meta name="description" content="Learn about Artist Name — biography, artist statement, and exhibition history.">
+  <title>About — Ishigaki Miyuki</title>
+  <meta name="description" content="Learn about Ishigaki Miyuki — biography, artist statement, and exhibition history.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -15,12 +15,20 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Artist Name</a>
+      <a href="index.html" class="nav__logo" lang="en">Ishigaki Miyuki <span class="nav__logo-sub">Artwork</span></a>
       <ul class="nav__links">
-        <li><a href="index.html" class="nav__link">Home</a></li>
-        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
-        <li><a href="about.html" class="nav__link nav__link--active">About</a></li>
-        <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+        <li><a href="video.html" class="nav__link" data-i18n="nav.video">Video</a></li>
+        <li><a href="about.html" class="nav__link nav__link--active" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+        <li class="nav__lang">
+          <button class="nav__lang-trigger" data-i18n="nav.language">Language</button>
+          <div class="nav__lang-dropdown">
+            <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="ja">日本語</button>
+            <button class="lang-option" data-lang="zhTW">繁體中文</button>
+          </div>
+        </li>
       </ul>
       <button class="nav__toggle" aria-label="Toggle navigation">
         <span></span>
@@ -35,35 +43,35 @@
       <div class="container">
         <div class="about-layout">
           <div>
-            <img src="images/site/artist-portrait.svg" alt="Portrait of Artist Name" class="about__image">
+            <img src="images/site/artist-portrait.svg" alt="Portrait of Ishigaki Miyuki" class="about__image">
           </div>
           <div class="about__content">
-            <h1>About the Artist</h1>
+            <h1 data-i18n="about.title">About the Artist</h1>
 
             <div class="about__statement">
-              <p>"I paint because it is the truest way I know to capture the fleeting beauty of a moment — the way light falls through a window, the quiet dignity of a flower past its bloom, the warmth of a familiar place."</p>
+              <p data-i18n="about.statement">"I paint because it is the truest way I know to capture the fleeting beauty of a moment — the way light falls through a window, the quiet dignity of a flower past its bloom, the warmth of a familiar place."</p>
             </div>
 
-            <p>
-              Artist Name is a painter and mixed-media artist based in [City, Country].
+            <p data-i18n="about.bio1">
+              Ishigaki Miyuki is a painter and mixed-media artist based in [City, Country].
               With a practice spanning over two decades, her work explores the interplay of
               light, texture, and emotion through a variety of media including oil, watercolor,
               and mixed-media collage.
             </p>
 
-            <p>
+            <p data-i18n="about.bio2">
               Drawing inspiration from nature, everyday life, and the subtle shifts of seasons,
               each piece is an invitation to slow down and notice the extraordinary in the ordinary.
               Her palette tends toward warm, muted tones that evoke a sense of calm and contemplation.
             </p>
 
-            <p>
+            <p data-i18n="about.bio3">
               Her work has been exhibited in galleries across [region] and is held in private
               collections internationally. She is available for commissions and welcomes inquiries
               from collectors and galleries.
             </p>
 
-            <h3 style="margin-top: var(--space-3xl);">Exhibition History</h3>
+            <h3 style="margin-top: var(--space-3xl);" data-i18n="about.exhibitions">Exhibition History</h3>
             <p>
               2024 — Solo Exhibition, [Gallery Name], [City]<br>
               2023 — Group Show, [Gallery Name], [City]<br>
@@ -81,17 +89,18 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__name">Artist Name</span>
+        <span class="footer__name" lang="en">Ishigaki Miyuki</span>
         <div class="footer__links">
-          <a href="gallery.html" class="footer__link">Gallery</a>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="video.html" class="footer__link" data-i18n="nav.video">Video</a>
+          <a href="about.html" class="footer__link" data-i18n="nav.about">About</a>
+          <a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact</a>
         </div>
-        <p class="footer__copy">&copy; 2026 Artist Name. All rights reserved.</p>
+        <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Ishigaki Miyuki. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

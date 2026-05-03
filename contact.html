@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Artist Name</title>
-  <meta name="description" content="Get in touch with Artist Name for commissions, purchases, or exhibition inquiries.">
+  <title>Contact — Ishigaki Miyuki</title>
+  <meta name="description" content="Get in touch with Ishigaki Miyuki for commissions, purchases, or exhibition inquiries.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -15,12 +15,20 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Artist Name</a>
+      <a href="index.html" class="nav__logo" lang="en">Ishigaki Miyuki <span class="nav__logo-sub">Artwork</span></a>
       <ul class="nav__links">
-        <li><a href="index.html" class="nav__link">Home</a></li>
-        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
-        <li><a href="about.html" class="nav__link">About</a></li>
-        <li><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+        <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+        <li><a href="video.html" class="nav__link" data-i18n="nav.video">Video</a></li>
+        <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" class="nav__link nav__link--active" data-i18n="nav.contact">Contact</a></li>
+        <li class="nav__lang">
+          <button class="nav__lang-trigger" data-i18n="nav.language">Language</button>
+          <div class="nav__lang-dropdown">
+            <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="ja">日本語</button>
+            <button class="lang-option" data-lang="zhTW">繁體中文</button>
+          </div>
+        </li>
       </ul>
       <button class="nav__toggle" aria-label="Toggle navigation">
         <span></span>
@@ -34,18 +42,18 @@
     <section class="section">
       <div class="container">
         <div class="section__header">
-          <h1 class="section__title">Get in Touch</h1>
-          <p class="section__subtitle">Interested in a piece, a commission, or an exhibition? I'd love to hear from you.</p>
+          <h1 class="section__title" data-i18n="contact.title">Get in Touch</h1>
+          <p class="section__subtitle" data-i18n="contact.subtitle">Interested in a piece, a commission, or an exhibition? I'd love to hear from you.</p>
         </div>
 
         <div class="contact-layout">
           <div class="contact__info">
-            <h2>Contact Information</h2>
-            <p>Feel free to reach out for inquiries about available works, commissions, or exhibition opportunities.</p>
+            <h2 data-i18n="contact.info.title">Contact Information</h2>
+            <p data-i18n="contact.info.text">Feel free to reach out for inquiries about available works, commissions, or exhibition opportunities.</p>
 
             <div class="contact__detail">
               <span>&#9993;</span>
-              <a href="mailto:artist@example.com">artist@example.com</a>
+              <a href="mailto:meishin0718@gmail.com">meishin0718@gmail.com</a>
             </div>
 
             <div class="contact__detail">
@@ -55,37 +63,37 @@
 
             <div class="contact__detail">
               <span>&#9883;</span>
-              <span>[City, Country]</span>
+              <span>Tokyo, Japan</span>
             </div>
 
-            <h3 style="margin-top: var(--space-2xl); margin-bottom: var(--space-md);">Follow</h3>
+            <h3 style="margin-top: var(--space-2xl); margin-bottom: var(--space-md);" data-i18n="contact.follow">Follow</h3>
             <div class="contact__detail">
-              <a href="#" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.instagram.com/miyuki.art0156/" target="_blank" rel="noopener">Instagram</a>
               <span>&middot;</span>
-              <a href="#" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://www.facebook.com/miyuki.ishigaki.50" target="_blank" rel="noopener">Facebook</a>
             </div>
           </div>
 
           <div class="contact__form">
-            <h3>Send a Message</h3>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <h3 data-i18n="contact.form.title">Send a Message</h3>
+            <form action="https://formspree.io/f/mjglgerd" method="POST">
               <div class="form__group">
-                <label for="name" class="form__label">Name</label>
+                <label for="name" class="form__label" data-i18n="contact.form.name">Name</label>
                 <input type="text" id="name" name="name" class="form__input" required>
               </div>
               <div class="form__group">
-                <label for="email" class="form__label">Email</label>
+                <label for="email" class="form__label" data-i18n="contact.form.email">Email</label>
                 <input type="email" id="email" name="email" class="form__input" required>
               </div>
               <div class="form__group">
-                <label for="subject" class="form__label">Subject</label>
+                <label for="subject" class="form__label" data-i18n="contact.form.subject">Subject</label>
                 <input type="text" id="subject" name="subject" class="form__input">
               </div>
               <div class="form__group">
-                <label for="message" class="form__label">Message</label>
+                <label for="message" class="form__label" data-i18n="contact.form.message">Message</label>
                 <textarea id="message" name="message" class="form__textarea" required></textarea>
               </div>
-              <button type="submit" class="form__submit">Send Message</button>
+              <button type="submit" class="form__submit" data-i18n="contact.form.submit">Send Message</button>
             </form>
           </div>
         </div>
@@ -97,17 +105,18 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__name">Artist Name</span>
+        <span class="footer__name" lang="en">Ishigaki Miyuki</span>
         <div class="footer__links">
-          <a href="gallery.html" class="footer__link">Gallery</a>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="video.html" class="footer__link" data-i18n="nav.video">Video</a>
+          <a href="about.html" class="footer__link" data-i18n="nav.about">About</a>
+          <a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact</a>
         </div>
-        <p class="footer__copy">&copy; 2026 Artist Name. All rights reserved.</p>
+        <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Ishigaki Miyuki. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
