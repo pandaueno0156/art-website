@@ -91,7 +91,7 @@ def main():
 
     print(f"\nDone! Check '{ARTWORKS_DIR}/' and '{THUMBS_DIR}/' for results.")
     print("\nNext steps:")
-    print("  1. Update gallery.html with the new image filenames")
+    print("  1. Update the series page HTML files with the new image filenames")
     print("  2. Use <picture> elements for WebP with JPEG fallback (see README)")
 
 

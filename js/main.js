@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initLightbox();
-  initFilterTabs();
   disableImageRightClick();
   initLanguageSwitcher();
 });
@@ -106,27 +105,3 @@ function applyLanguage(lang) {
   document.documentElement.lang = lang;
 }
 
-/* ===== Gallery Filter Tabs ===== */
-function initFilterTabs() {
-  const tabs = document.querySelectorAll('.filter-tab');
-  const items = document.querySelectorAll('.gallery-item');
-
-  if (!tabs.length || !items.length) return;
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      const category = tab.dataset.category;
-
-      items.forEach(item => {
-        if (category === 'all' || item.dataset.category === category) {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  });
-}

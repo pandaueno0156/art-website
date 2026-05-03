@@ -1,6 +1,6 @@
-# Art Portfolio Website
+# Art Portfolio Website — Ishigaki Miyuki
 
-A lightweight, static art portfolio website built with HTML, CSS, and vanilla JavaScript. Designed for GitHub Pages hosting.
+A lightweight, static art portfolio website built with HTML, CSS, and vanilla JavaScript. Designed for GitHub Pages hosting. Supports English, Japanese, and Traditional Chinese.
 
 ## Quick Start
 
@@ -9,9 +9,7 @@ Open `index.html` in your browser to preview the site locally. No build step or 
 Alternatively, use any local server:
 
 ```bash
-# Python
 python3 -m http.server 8000
-
 # Then visit http://localhost:8000
 ```
 
@@ -19,10 +17,10 @@ python3 -m http.server 8000
 
 1. Add the full-size image to `images/artworks/` (recommended: ~1600px wide, JPEG or WebP)
 2. Add a smaller thumbnail to `images/thumbs/` (recommended: ~600px wide)
-3. Add a gallery item in `gallery.html`:
+3. Add a gallery item inside the relevant `series/series-N.html` page:
 
 ```html
-<div class="gallery-item" data-category="painting" data-title="Title" data-meta="Medium, Size, Year" data-full="images/artworks/filename.jpg">
+<div class="gallery-item" data-title="Title" data-meta="Medium, Size, Year" data-full="images/artworks/filename.jpg">
   <img src="images/thumbs/filename.jpg" alt="Title" class="gallery-item__img" loading="lazy">
   <div class="gallery-item__overlay">
     <div>
@@ -33,21 +31,35 @@ python3 -m http.server 8000
 </div>
 ```
 
+## Editing Translations
+
+All translatable text lives in `js/translations.js`. Each entry has `en`, `ja`, and `zhTW` values. Edit the `ja` or `zhTW` values to update Japanese or Traditional Chinese text.
+
 ## File Structure
 
 ```
 art-website/
-├── index.html          Home page
-├── gallery.html        Full gallery with filtering
-├── about.html          Artist biography
-├── contact.html        Contact info and form
-├── css/style.css       All styles
-├── js/main.js          Lightbox + mobile nav + filters
+├── index.html              Home page
+├── video.html              YouTube video embeds
+├── about.html              Artist biography
+├── contact.html            Contact info and form
+├── series/
+│   ├── series-1.html       Artwork series pages (1-5)
+│   ├── series-2.html
+│   ├── series-3.html
+│   ├── series-4.html
+│   └── series-5.html
+├── css/style.css           All styles
+├── js/
+│   ├── main.js             Lightbox, mobile nav, language switcher, right-click protection
+│   └── translations.js     English / Japanese / Traditional Chinese translations
 ├── images/
-│   ├── artworks/       Full-size artwork images
-│   ├── thumbs/         Thumbnail versions
-│   └── site/           Hero, portrait, logo
-├── CNAME               Custom domain (when ready)
+│   ├── artworks/           Full-size artwork images
+│   ├── thumbs/             Thumbnail versions
+│   ├── originals/          Original unprocessed images
+│   └── site/               Hero, portrait
+├── optimize-images.py      Python script to resize and convert images
+├── CNAME                   Custom domain (when ready)
 └── README.md
 ```
 
@@ -71,3 +83,4 @@ art-website/
 - Target ~50-80KB for thumbnails, ~200-400KB for full-size
 - WebP format saves ~30% vs JPEG at same quality
 - Always use `loading="lazy"` on images below the fold
+- Or run `python3 optimize-images.py` to batch-process images in `images/originals/`

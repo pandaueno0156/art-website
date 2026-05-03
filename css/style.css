@@ -65,7 +65,7 @@ ol {
    ========================================================================== */
 :root {
   /* --- PAGE BACKGROUNDS --- */
-  --color-bg: #c02e9bd0;              /* MAIN BACKGROUND: home, gallery, series pages, about, contact */
+  --color-bg: #c02e9bd0;              /* MAIN BACKGROUND: home, series pages, video, about, contact */
   --color-bg-alt: #a684eaaa;          /* "ABOUT THE ARTIST" SECTION BACKGROUND (home page) */
   --color-footer-bg: #c379bfe5;       /* FOOTER BACKGROUND + gap above footer */
 
@@ -839,31 +839,6 @@ main {
   background-color: var(--color-accent);
 }
 
-/* ===== Filter Tabs (Gallery) ===== */
-.filter-tabs {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-3xl);
-  flex-wrap: wrap;
-}
-
-.filter-tab {
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border: 1px solid transparent;
-  background: none;
-  cursor: pointer;
-  transition: border-color var(--transition-fast), color var(--transition-fast);
-}
-
-.filter-tab:hover,
-.filter-tab.active {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
@@ -993,14 +968,5 @@ main {
 
   .hero {
     min-height: 350px;
-  }
-
-  .filter-tabs {
-    gap: var(--space-sm);
-  }
-
-  .filter-tab {
-    padding: var(--space-xs) var(--space-md);
-    font-size: var(--text-xs);
   }
 }
