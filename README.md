@@ -68,7 +68,7 @@ art-website/
 1. Create a GitHub repository
 2. Push all files to the `main` branch
 3. Go to Settings → Pages → Source: "Deploy from a branch" → Branch: `main`, folder: `/ (root)`
-4. Site will be live at `https://yourusername.github.io/repository-name/`
+4. Site will be live at `https://pandaueno0156.github.io/art-website/`
 
 ## Custom Domain
 
